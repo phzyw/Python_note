@@ -287,4 +287,77 @@ print('#'.join(str1))       # h#e#l#l#o# #w#o#r#l#d
 
 
 
-### 五、字典
+### 五、字典（dict）
+
+- dictionary（字典）是除列表外python中最灵活的数据类型
+- 字典同样可以用来存储多个数据
+- 通常用来存储 描述一个 物体的相关信息
+- 和列表的区别
+  1. 列表是 **有序** 的对象集合
+  2. 字典是 **无序** 的对象集合
+
+#### 1.定义
+
+- 字典用 { } 定义
+- 字典使用 **键值对** 存储数据，键值对之间使用，逗号隔开
+- 键 key是索引
+- 值 value是数据
+- 键和值之间使用: 分隔
+- 键必须是唯一的
+- 值可以取任意数据类型，但键只能使用 字符串，数字或元组
+
+```python
+# 字典的创建
+info = {
+    'name': '张三',
+    'age': '12',
+    'sex': 'male',
+   # 'name': 'jack'      # {'name': 'jack', 'age': '12', 'sex': 'male'} 键重复会覆盖之前的值
+}
+print(info)     # {'name': '张三', 'age': '12', 'sex': 'male'}
+
+# 空字典的创建
+d = {}
+print(d)        # {}
+
+# 空字典的创建
+d = dict()
+print(d)        # {}
+
+# 新增键值对
+info['height'] = 1.70
+print(info)     # {'name': '张三', 'age': '12', 'sex': 'male', 'height': 1.7}
+
+# 获取键值对
+print(info['name'])     # 张三
+
+# 修改键值对
+info['name'] = '李四'
+print(info)     # {'name': '李四', 'age': '12', 'sex': 'male', 'height': 1.7}
+
+# 删除字典
+del info
+
+# 字典的遍历
+for i in info:
+    print(i, info[i])
+
+# 字典的遍历
+for k,v in info.items():
+    print(k, v)
+    
+# 遍历字典key值
+for k in info.keys():
+    print(k)
+
+# 遍历字典value值
+for v in info.values():
+    print(v)
+```
+
+
+
+
+
+
+
