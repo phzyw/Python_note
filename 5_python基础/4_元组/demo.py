@@ -35,7 +35,10 @@
 # 元组相加
 tuple1 = (123, 'hello world', True)
 tuple2 = (1,2,3,5,7)
-print(tuple1 + tuple2)      # (123, 'hello world', True, 1, 2, 3, 5, 7)
+# print(tuple1 + tuple2)      # (123, 'hello world', True, 1, 2, 3, 5, 7)
 
 # 重复 *
-print(tuple2 * 3)       # (1, 2, 3, 5, 7, 1, 2, 3, 5, 7, 1, 2, 3, 5, 7)
+# print(tuple2 * 3)       # (1, 2, 3, 5, 7, 1, 2, 3, 5, 7, 1, 2, 3, 5, 7)
+
+# in
+print( 1 in tuple1 )        # True

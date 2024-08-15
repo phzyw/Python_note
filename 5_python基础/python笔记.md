@@ -181,5 +181,110 @@ print(tuple1 + tuple2)      # (123, 'hello world', True, 1, 2, 3, 5, 7)
 
 # 重复 *
 print(tuple2 * 3)       # (1, 2, 3, 5, 7, 1, 2, 3, 5, 7, 1, 2, 3, 5, 7)
+
+# in
+print( 1 in tuple1 )        # True
 ```
 
+
+
+#### 3.元组的常用方法
+
+```python
+# count() 计数
+tuple1 = (1,2,'hello',True)
+print(tuple1.count('hello'))        # 1
+
+#  index() 获取索引值
+print(tuple1.index('hello'))        # 2
+```
+
+
+
+#### 4.元组的遍历
+
+```python
+# 元组的遍历
+for i in tuple1:
+    print(i,end='---')        # 1---2---hello---True---
+ 
+# 加上索引遍历元组
+for i,j in enumerate(tuple1):
+    print(i,j)
+    
+# range() 遍历，和加上索引遍历元组相同
+for i in range(len(tuple1)):
+    print(i,tuple1[i])
+```
+
+
+
+
+
+### 三、range函数
+
+#### 1.定义
+
+range 是系统提供的内建函数，range一般用于for-in循环遍历
+
+```
+原型：
+	range([start,]stop[,step])
+        range有三个参数,其中
+        --start:表示列表的起始值，默认为0
+        --stop:表示列表的结束值，但是不包含
+        --strp:步长，默认为1
+```
+
+```python
+# range(start,end,step)
+print(list(range(10)))      # end [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+print(list(range(1,10)))    # start [1, 2, 3, 4, 5, 6, 7, 8, 9]
+print(list(range(1,10,2)))  # start,end,step [1, 3, 5, 7, 9]
+```
+
+
+
+### 四、字符串（String）
+
+#### 1.定义
+
+字符串可以用单引号''，双引号"" 和三引号"' '"括起来
+
+#### 2.字符串的遍历
+
+```python
+# 字符串的遍历
+str1 = 'hello world'
+# for i in str1:
+#     print(i)
+
+# 带索引的遍历
+# for index,value in enumerate(str1):
+#     print(index,value)
+
+# range遍历
+for i in range(len(str1)):
+    print(i,str1[i])
+```
+
+
+
+#### 3.常用方法
+
+```python
+str1 = 'hello world'
+
+# 计数，计算所求的在字符串中有多少个数
+print(str1.count('o'))      # 2
+
+# 分割字符串 split()
+print(str1.split(" "))      # ['hello', 'world']
+
+# 字符串拼接
+print('#'.join(str1))       # h#e#l#l#o# #w#o#r#l#d
+```
+
+
+
+### 五、字典
