@@ -306,6 +306,10 @@ print('#'.join(str1))       # h#e#l#l#o# #w#o#r#l#d
 - 键必须是唯一的
 - 值可以取任意数据类型，但键只能使用 字符串，数字或元组
 
+
+
+#### 2.字典的创建
+
 ```python
 # 字典的创建
 info = {
@@ -324,6 +328,14 @@ print(d)        # {}
 d = dict()
 print(d)        # {}
 
+```
+
+
+
+#### 3.字典的常用方法
+
+```python
+
 # 新增键值对
 info['height'] = 1.70
 print(info)     # {'name': '张三', 'age': '12', 'sex': 'male', 'height': 1.7}
@@ -337,7 +349,13 @@ print(info)     # {'name': '李四', 'age': '12', 'sex': 'male', 'height': 1.7}
 
 # 删除字典
 del info
+```
 
+
+
+#### 4.字典的遍历
+
+```python
 # 字典的遍历
 for i in info:
     print(i, info[i])
@@ -354,6 +372,8 @@ for k in info.keys():
 for v in info.values():
     print(v)
 ```
+
+
 
 
 
