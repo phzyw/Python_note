@@ -377,7 +377,160 @@ for v in info.values():
 
 
 
+### 六、集合 (set)
 
+#### 1.定义
+
+- 集合不允许有重复元素，如添加重复元素，则会自动过滤（删除），可以进行交集，并集的运算
+- 是一种无序无重复元素的数据结构
+- 与字典dict类似，是一组key的集合（不存储value）
+
+#### 2.集合的创建
+
+```python
+# 集合的创建
+s = set()
+print(s,type(s))        # set() <class 'set'>
+
+s = {1,2,3,4,1,2}
+print(s,type(s))        # {1, 2, 3, 4} <class 'set'>
+```
+
+
+
+#### 3.集合的类型转换
+
+```python
+# list-->set
+s = set([1,2,3,4])      
+print(s,type(s))        # {1, 2, 3, 4} <class 'set'>
+
+# tupel-->set
+s = set((1,2,3,4))     
+print(s,type(s))        # {1, 2, 3, 4} <class 'set'>
+
+# str-->set
+s = set('123')          
+print(s,type(s))        # {'1', '2', '3'} <class 'set'>
+
+# dict-->set
+s = set({               
+    'name':'jack',
+    'age':30,
+    'sex':'male'
+})
+print(s,type(s))        # {'age', 'sex', 'name'} <class 'set'>
+```
+
+
+
+#### 4.集合的常用操作
+
+```python
+
+# in
+s = {1,2,3,4}
+print(1 in s)       # True
+
+# len 取长度
+print(len(s))       # 4
+
+# max 取最大值
+print(max(s))       # 4
+
+# min 取最小值
+print(min(s))       # 1
+
+# del 删除
+del s
+print(s)
+```
+
+
+
+#### 5.集合的遍历
+
+```python
+s = {1,2,'jack'}
+for i in s:
+    print(i,end='--')       # 1--2--jack--
+```
+
+
+
+#### 6.集合的常用方法
+
+```python
+# remove
+s = {1,2,'jack'}
+s.remove(1)
+print(s)        # {2, 'jack'}
+
+# update
+s.update({3,5,7,8})
+print(s)        # {2, 3, 5, 7, 8, 'jack'}
+
+# add
+s.add('张三')
+print(s)        # {2, 3, 5, 'jack', 7, 8, '张三'}
+```
+
+
+
+#### 7.交集与并集操作
+
+```python
+
+s = {1,2,3,4,'jack'}
+s1 = {4,5,6,4,1}
+
+# 取交集
+print(s & s1)       # {1, 4}
+
+# 取并集
+print(s | s1)       # {1, 2, 3, 4, 5, 6, 'jack'}    --去重后取并集
+```
+
+
+
+注：集合可用于列表的去重
+
+```python
+# 列表去重
+score = [60,70,80,70,60,90]
+print(set(score))       # {80, 90, 60, 70}
+```
+
+
+
+
+
+### 七、数据类型的划分
+
+#### 1.可变类型 & 不可变类型
+
+不可变数据类型在创建后，其值就不能被改变。python中的以下数据类型是不可变的。
+
+- 数字（例如：int，float，complex）
+- 字符串（例如：str）
+- 元组（例如：tuple）
+- 布尔类型（例如：bool）
+
+可变数据类型的值可以在创建后被改变。python中的以下数据类型是可变的。
+
+- 列表（list）
+- 字典（dict）
+- 集合（set）
+
+
+
+### 八、总结
+
+<img src="https://gitee.com/fattiger666/picgo/raw/master/01.png" alt="组合数据类型总结" style="zoom:80%;" />
+
+
+
+<img src="https://gitee.com/fattiger666/picgo/raw/master/02.png" alt="组合数据类型单词总结" style="zoom:80%;" />
 
 
 
