@@ -524,7 +524,7 @@ print(set(score))       # {80, 90, 60, 70}
 
 
 
-### 八、总结
+### 八、数据类型总结
 
 <img src="https://gitee.com/fattiger666/picgo/raw/master/01.png" alt="组合数据类型总结" style="zoom:80%;" />
 
@@ -533,4 +533,152 @@ print(set(score))       # {80, 90, 60, 70}
 <img src="https://gitee.com/fattiger666/picgo/raw/master/02.png" alt="组合数据类型单词总结" style="zoom:80%;" />
 
 
+
+
+
+### 九、异常
+
+#### 1.定义
+
+代码没有语法问题，可以运行，但会出现运行时的错误，这种在运行期间检测到的错误被称为异常。
+
+出现异常程序会终止执行，用户体验很差。
+
+可以使用try-except语句进行异常的检测和处理。
+
+
+
+#### 2.try-except语句
+
+```python
+try:
+    n = int(input('请输入数字：'))
+    n = n / 2
+    print(n)
+
+except ValueError as e:
+    print('不能输入零')
+    print(e)
+
+except:
+    print('请输入数字')
+
+else:
+    print('执行else')     # 运行没有被except语句捕获，执行else模块
+finally:
+    print('执行finallly') # 无论如何都要执行finally模块
+```
+
+
+
+#### 3.raise关键字
+
+```python
+raise 是 Python 中的一个关键字，用于引发一个指定的异常。当你的代码遇到了不可恢复的错误或者特定条件不满足时，你可以使用 raise 来抛出一个异常。
+```
+
+
+
+
+
+### 十、函数
+
+#### 1.定义
+
+使用关键字def，确定函数名称，参数名称，参数个数，编写函数体（用于实现函数功能的代码）
+
+```python
+def func():
+	print('python')
+```
+
+
+
+#### 2.函数的调用
+
+```python
+# 函数的创建
+def fun():
+    print('python')
+
+# 函数的调用，函数不调用是不会主动执行的
+fun()       # python
+```
+
+
+
+#### 3.函数的参数
+
+函数有 **形参** 和 **实参** ，也可以没有形参和实参
+
+**形参**：就是函数定义时小括号里的参数，是用来接收参数用的，在函数内部作为变量使用。
+
+**实参**：函数调用的时候，小括号里的参数，是用来把数据传递到函数内部用的。
+
+```python
+# 两数求和
+def sum(num1,num2): # 形式参数
+   result=num1+num2
+   print(result)
+
+# 函数的调用
+sum(1,3)    # 实参
+```
+
+#### 4.函数的返回值（return）
+
+函数中的返回值关键字为 return，是函数完成工作后，给调用者的一个结果。
+
+```python
+def sum(num1,num2): # 形式参数
+   result=num1+num2
+   return result
+```
+
+
+
+#### 5.变量的作用域
+
+**全局变量** **&** **局部变量**
+
+**全局变量**：是在函数外部定义的变量，所有函数内部都可以使用这个变量
+
+**局部变量**：是在函数内部定义的变量，只能在函数内部使用，不能在函数外使用
+
+```python
+num1 = 10
+
+def fun():
+    num2 = 20
+    print('num2的值为',num2)
+
+print('num1的值为',num1)
+
+fun()
+
+# num1的值为 10
+# num2的值为 20
+```
+
+若想在函数内部修改全局变量的值，可以使用关键字 global
+
+```python
+num1 = 10
+
+def fun():
+    global num1     # 声明在函数中使用的num1是全局变量num1
+    num2 = 20
+    num1 = 20
+    print('num2的值为',num2)
+
+fun()
+print('num1的值为',num1)
+
+# num1的值为 20
+# num2的值为 20
+```
+
+
+
+#### 6.匿名函数
 

@@ -16,3 +16,4 @@ for i in range(month):
     result += days[i]
 result += day
 print(f'今天是{year}年的第{result}天')
+
