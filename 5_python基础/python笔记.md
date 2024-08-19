@@ -682,3 +682,35 @@ print('num1的值为',num1)
 
 #### 6.匿名函数
 
+lambda函数是一种快速定义单行的最小函数，可以用在任何需要函数的地方
+
+```python
+ # 常规函数
+def fun(x,y):
+    return x+y
+
+# 匿名函数
+a = lambda x,y:x+y
+print(fun(2,3))
+```
+
+
+
+
+
+#### 7.内置函数
+
+<img src="https://gitee.com/fattiger666/picgo/raw/master/03.png" alt="内置函数" style="zoom:80%;" />
+
+<img src="https://gitee.com/fattiger666/picgo/raw/master/04.png" alt="内置函数" style="zoom:80%;" />
+
+<img src="https://gitee.com/fattiger666/picgo/raw/master/05.png" alt="内置函数" style="zoom:80%;" />
+
+<img src="https://gitee.com/fattiger666/picgo/raw/master/06.png" alt="内置函数" style="zoom:80%;" />
+
+
+
+#### 8.递归
+
+- 一个函数调用自身称为递归调用
+- 一个会调用自身的函数称为递归函数
