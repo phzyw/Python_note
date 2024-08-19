@@ -714,3 +714,40 @@ print(fun(2,3))
 
 - 一个函数调用自身称为递归调用
 - 一个会调用自身的函数称为递归函数
+
+
+
+### 十一、模块
+
+- 模块就好比工具包，要想使用这个工具包中的工具，就需要导入（import）这个模块
+- 每一个以.py结尾的python文件都是一个模块
+- 在模块中定义的全局变量、函数都是模块能够提供给外界直接使用的工具。
+
+模块导入的几种方式：
+
+```python
+# 导入模块所有函数
+import my_module
+
+# 导入模块指定函数
+from my_module import fun,total
+
+# 导入模块所有函数
+from my_module import *
+
+# 导入模块函数并改名
+from my_module import fun as f,total as t
+```
+
+
+
+
+
+### 十二、文件及IO操作
+
+
+
+
+
+
+
