@@ -745,9 +745,53 @@ from my_module import fun as f,total as t
 
 ### 十二、文件及IO操作
 
+#### 1.读取文件
+
+```python
+import os
+# 打开文件
+path = os.getcwd()      # 获取文件路径
+
+file = open(path+'/test.txt',encoding='utf-8',mode='r')
+
+# 读取文件
+test = file.read()
+print(test)
+
+# 关闭文件
+file.close()
+```
 
 
 
+#### 2.写入文件
+
+```python
+# 打开文件
+file = open('test2.txt',mode='w',encoding='utf-8')
+
+# 写入文件
+file.write('hello,world')
+
+# 关闭文件
+file.close()
+```
 
 
 
+#### 3.追加文件
+
+```python
+# 打开文件
+f = open('test3.txt',mode='a',encoding='utf-8')
+
+# 写入文件
+f.write('hello,world \n')
+
+# 关闭文件
+f.close()
+```
+
+
+
+#### 4.with语句
