@@ -819,3 +819,16 @@ csv.writer()
 
 
 ### 十三、面向对象
+
+```python
+# 类的定义
+class ClassName(object):
+    pass
+
+--class:表明这是一个类
+--ClassName:类的名字
+--():父类集合的开始和结束
+--object:父类的名字，定义的类继承自父类，可以不写，默认为object。
+		object是所有类的直接或间接父类。
+```
+
