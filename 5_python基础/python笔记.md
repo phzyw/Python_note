@@ -795,3 +795,27 @@ f.close()
 
 
 #### 4.with语句
+
+```python
+# with语句可以简化文件操作的打开文件，读取文件，关闭文件步骤
+with open('note.txt',mode='r',encoding='utf-8') as f:
+    text = f.read()
+    print(text)
+```
+
+
+
+#### 5.csv文件的读写
+
+```python
+import csv		# 引入csv库
+
+csv.reader()
+csv.writer()
+```
+
+
+
+
+
+### 十三、面向对象
