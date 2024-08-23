@@ -820,6 +820,8 @@ csv.writer()
 
 ### 十三、面向对象
 
+#### 1.类的定义
+
 ```python
 # 类的定义
 class ClassName(object):
@@ -830,5 +832,45 @@ class ClassName(object):
 --():父类集合的开始和结束
 --object:父类的名字，定义的类继承自父类，可以不写，默认为object。
 		object是所有类的直接或间接父类。
+```
+
+
+
+#### 2.实例属性
+
+```python
+class Player(object):
+    pass
+
+tom = Player()
+# 实例的属性
+tom.name = 'tom'
+tom.age = 23
+tom.city = '杭州'
+print(tom.name,tom.age,tom.city)        # tom 23 杭州
+
+```
+
+
+
+```python
+class Player(object):
+    def __init__(self,name,age,city):  # 初始化函数
+        self.name = name
+        self.age = age
+        self.city = city
+
+tom = Player('tom',24,'杭州')
+print(tom.name,tom.age,tom.city)        # tom 24 杭州
+
+jack = Player('jack',35,'上海')
+
+# 修改属性
+jack.city = '合肥'        # jack 35 合肥
+print(jack.name,jack.age,jack.city)
+
+# __dict__ 获取对象（实例）的所有属性
+print(jack.__dict__)        # {'name': 'jack', 'age': 35, 'city': '合肥'}
+
 ```
 
