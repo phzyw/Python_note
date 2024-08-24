@@ -874,3 +874,11 @@ print(jack.__dict__)        # {'name': 'jack', 'age': 35, 'city': '合肥'}
 
 ```
 
+
+
+#### 3.类属性
+
+```python
+
+```
+
