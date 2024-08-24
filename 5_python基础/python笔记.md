@@ -879,6 +879,70 @@ print(jack.__dict__)        # {'name': 'jack', 'age': 35, 'city': '合肥'}
 #### 3.类属性
 
 ```python
+class Player(object):
+    numbers = 0     # 类属性
+    def __init__(self,name,age,city):   # 初始化函数（构造函数）
+        self.name = name    # 实例属性
+        self.age = age
+        self.city = city
+        Player.numbers += 1
 
+tom = Player('tom',23,'杭州')
+print(tom.__dict__)
+print(Player.numbers)
+```
+
+
+
+#### 4.实例方法
+
+```python
+
+class Player(object):
+    numbers = 0     # 类属性
+    def __init__(self,name,age,city):   # 初始化函数（构造函数）
+        self.name = name    # 实例属性
+        self.age = age
+        self.city = city
+        Player.numbers += 1
+
+    # 实例方法
+    def show(self):
+        print(f'{self.name}来自{self.city},年龄为{self.age}岁')
+
+tom = Player('tom',34,'北京')
+tom.show()
+```
+
+
+
+#### 5.类方法
+
+```python
+class Player(object):
+    numbers = 0
+    def __init__(self,name,age,city):
+        self.name = name
+        self.age = age
+        self.city = city
+        Player.numbers += 1
+
+    @classmethod
+    def get_player(cls):        # 类方法
+        print(cls.numbers)
+
+tom = Player('tom',23,'上海')
+
+Player.get_player()
+```
+
+
+
+#### 6.静态方法
+
+```python
+    @staticmethod
+    def get_name():
+        pass
 ```
 
