@@ -946,3 +946,104 @@ Player.get_player()
         pass
 ```
 
+
+
+#### 7.继承
+
+```python
+
+# 父类
+class Player(object):
+    def __init__(self,name,age,city):
+        self.name = name
+        self.age = age
+        self.city = city
+
+# 子类
+class VIP(Player):
+    pass
+
+# 子类继承父类
+tom = VIP('tom',23,'淄博')
+print(tom.__dict__)		# {'name': 'tom', 'age': 23, 'city': '淄博'}
+```
+
+
+
+#### 8.多态
+
+多态是面向对象编程中的一个核心概念，指的是一个实体能够表现出多种形态。
+
+```python
+
+# 动物类
+class Animal(object):
+    def speak(self):
+        print('动物叫')
+
+
+class Dog(Animal):
+    def speak(self):
+        print('狗叫')
+
+class Cat(Animal):
+    def speak(self):
+        print('猫叫')
+
+def speak(object):
+    object.speak()
+
+dog = Dog()
+cat = Cat()
+animal = Animal()
+
+animal.speak()
+dog.speak()
+cat.speak()
+
+print("-"*70)
+
+# 多态的实现
+speak(animal)
+speak(dog)
+speak(cat)
+
+```
+
+
+
+#### 8.封装
+
+```python
+
+class Person(object):
+    def __init__(self, name,age,city):
+        self.__name = name          # _name 代表受保护的标量，__name 代表私有变量
+        self.__age = age
+        self.__city = city
+
+    def get_name(self):
+        return self.__name
+
+    def get_age(self):
+        return self.__age
+
+    def get_city(self):
+        return self.__city
+
+    def set_age(self,age):
+        # self.__age = age
+        if isinstance(age,int):
+            self.__age = age
+        else:
+            raise Exception('年龄只能为整数')
+
+tom = Person('tom',23,'杭州')
+print(tom.get_name())
+print(tom.get_age())
+print(tom.get_city())
+
+tom.set_age(2)
+print(tom.get_age())
+```
+
