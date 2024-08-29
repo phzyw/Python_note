@@ -1,3 +1,9 @@
+### 前言：
+
+​		[网课笔记来源](https://www.bilibili.com/video/BV1eZ421b7ag?p=126&vd_source=449e7c1c8c7cf9d09153fd8e95ca2022)
+
+
+
 ### 一、python 列表  
 
 #### 1.语法
