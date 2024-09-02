@@ -1,4 +1,3 @@
-from cProfile import label
 
 import wx
 
@@ -12,13 +11,13 @@ class MyFrame(wx.Frame):
     # 构造方法
     def __init__(self):
         # 创建窗口
-        wx.Frame.__init__(self,None,title='简单计算器',size=(600,500))
+        wx.Frame.__init__(self,None,title='简单计算器',size=(265,400))
         # 窗口居中显示
         self.Center()
         # 创建面板
         self.pl = wx.Panel(self,pos=(0,0),size=(600,500))
         # 创建文本框
-        self.entry = wx.TextCtrl(self.pl,pos=(10,10),size=(400,50),style=wx.TE_RIGHT)
+        self.entry = wx.TextCtrl(self.pl,pos=(10,10),size=(230,50),style=wx.TE_RIGHT)
         # 创建按钮
         # 第一行
         self.btn_clear = wx.Button(self.pl,label='C',pos=(self.pos_x,self.pos_y),size=(self.btn_w,self.btn_h))
@@ -42,10 +41,10 @@ class MyFrame(wx.Frame):
         self.btn_1 = wx.Button(self.pl,label='1',pos=(self.pos_x,self.pos_y+180),size=(self.btn_w,self.btn_h))
         self.btn_2 = wx.Button(self.pl,label='2',pos=(self.pos_x+60,self.pos_y+180),size=(self.btn_w,self.btn_h))
         self.btn_3 = wx.Button(self.pl,label='3',pos=(self.pos_x+120,self.pos_y+180),size=(self.btn_w,self.btn_h))
-        self.btn_eq = wx.Button(self.pl,label='=',pos=(self.pos_x+180,self.pos_y+180),size=(self.btn_w,self.btn_h))
+        self.btn_eq = wx.Button(self.pl,label='=',pos=(self.pos_x+180,self.pos_y+180),size=(self.btn_w,self.btn_h+60))
 
         # 第五行
-        self.btn_0 = wx.Button(self.pl,label='0',pos=(self.pos_x,self.pos_y+240),size=(self.btn_w,self.btn_h))
+        self.btn_0 = wx.Button(self.pl,label='0',pos=(self.pos_x,self.pos_y+240),size=(self.btn_w+60,self.btn_h))
         self.btn_point = wx.Button(self.pl,label='.',pos=(self.pos_x+120,self.pos_y+240),size=(self.btn_w,self.btn_h))
 
         # 绑定按钮点击事件
@@ -71,77 +70,85 @@ class MyFrame(wx.Frame):
     # 事件方法
     # 第一行
     def On_btn_clear(self,event):
-        pass
+        self.entry.Clear()
 
     def On_btn_div(self,event):
-        pass
+        if self.entry.GetValue() != '':
+            self.entry.AppendText('/')
 
 
     def On_btn_mul(self,event):
-        pass
+        if self.entry.GetValue() != '':
+            self.entry.AppendText('*')
 
 
     def On_btn_back(self,event):
-        pass
+        text = self.entry.GetValue()
+        self.entry.SetValue(text[:-1])
+
 
 
     # 第二行
-    def On_btn_clear(self,event):
-        pass
+    def On_btn_7(self,event):
+        self.entry.AppendText('7')
 
 
-    def On_btn_clear(self,event):
-        pass
+    def On_btn_8(self,event):
+        self.entry.AppendText('8')
 
 
-    def On_btn_clear(self,event):
-        pass
+    def On_btn_9(self,event):
+        self.entry.AppendText('9')
 
 
-    def On_btn_clear(self,event):
-        pass
+    def On_btn_sub(self,event):
+        if self.entry.GetValue() != '':
+            self.entry.AppendText('-')
 
 
-    def On_btn_clear(self,event):
-        pass
+    # 第三行
+    def On_btn_4(self,event):
+        self.entry.AppendText('4')
 
 
-    def On_btn_clear(self,event):
-        pass
+    def On_btn_5(self,event):
+        self.entry.AppendText('5')
 
 
-    def On_btn_clear(self,event):
-        pass
+    def On_btn_6(self,event):
+        self.entry.AppendText('6')
 
 
-    def On_btn_clear(self,event):
-        pass
+    def On_btn_add(self,event):
+        if self.entry.GetValue() != '':
+            self.entry.AppendText('+')
 
 
-    def On_btn_clear(self,event):
-        pass
+    # 第四行
+    def On_btn_1(self,event):
+        self.entry.AppendText('1')
 
 
-    def On_btn_clear(self,event):
-        pass
+    def On_btn_2(self,event):
+        self.entry.AppendText('2')
 
 
-    def On_btn_clear(self,event):
-        pass
+    def On_btn_3(self,event):
+        self.entry.AppendText('3')
 
 
-    def On_btn_clear(self,event):
-        pass
+    def On_btn_eq(self,event):
+        text = self.entry.GetValue()
+        result = str(eval(text))
+        self.entry.SetValue(result)
+
+    # 第五行
+    def On_btn_0(self,event):
+        self.entry.AppendText('0')
 
 
-    def On_btn_clear(self,event):
-        pass
-
-
-    def On_btn_clear(self,event):
-        pass
-
-
+    def On_btn_point(self,event):
+        self.entry.AppendText('.')
 
 
 if __name__ == '__main__':
